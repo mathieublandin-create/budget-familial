@@ -1,0 +1,11 @@
+{
+  "name": "budget-familial",
+  "version": "0.1.0-m0",
+  "private": true,
+  "description": "Budget familial — PWA de suivi de budget (socle M0, build Node zéro dépendance).",
+  "type": "module",
+  "scripts": {
+    "build": "node build.js",
+    "test": "node build.js && node --test tests/domaine.test.js tests/livraison.test.js && node tests/bdd/runner.js"
+  }
+}
