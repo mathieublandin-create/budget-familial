@@ -44,6 +44,7 @@ Un livrable = un seul propriétaire ; les autres rôles soumettent des propositi
 ## 4. Gouvernance anti-boucles (reprise intégrale d'objectifs-pwa)
 
 - **File unique orchestrée** : les agents produisent, ne s'interpellent pas directement.
+- **Enchaînement spontané des rôles** : l'orchestrateur fait succéder les rôles de lui-même dans une même session, sans attendre l'humain entre deux rôles (hors points de validation humaine, §7) — aucune question de l'utilisateur n'est nécessaire pour lancer un rôle ; une question de l'utilisateur est routée directement vers le rôle propriétaire du sujet.
 - **Règle de l'écrit** : tout échange passe par un livrable ; une information manquante devient une **interprétation consignée (Ix)** et le travail continue — jamais de question agent → agent.
 - Les Ix ne sont arbitrées que par l'humain aux points de validation, ou en revue de fin de cycle.
 - **Plafonds** : 2 allers-retours de revue de code, 2 rejets de recette ; au-delà → revue à trois + arbitrage humain. Aucune boucle ne tourne en silence.

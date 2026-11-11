@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#14532d" />
+    <title>Budget familial</title>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="icons/icon-192.png" />
+  </head>
+  <body>
+    <header>
+      <h1>Budget familial</h1>
+      <p id="sous-titre">Socle M0 — suivi de budget</p>
+    </header>
+    <nav aria-label="Navigation principale">
+      <button data-ecran="accueil" aria-current="page">Accueil</button>
+      <button data-ecran="postes">Postes</button>
+      <button data-ecran="depense">Dépense</button>
+      <button data-ecran="budget">Budget</button>
+      <button data-ecran="donnees">Données</button>
+    </nav>
+    <main id="contenu"></main>
+    <footer>
+      <span>Version 0.1.0-m0</span>
+      <span id="statut-stockage"></span>
+    </footer>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
