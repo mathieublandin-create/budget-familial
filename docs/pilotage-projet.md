@@ -8,6 +8,7 @@ Registre tenu par le **CPM**. Décisions et actions du projet.
 | --- | --- | --- |
 | D-M0 | 11/11/2026 | Lancement du palier **M0 — Socle** (US1–US6) en PWA zéro dépendance, build Node rejouable, déploiement GitHub Pages automatique (hérité d'`objectifs-pwa`) |
 | D-CI | 11/11/2026 | CI minimale documentaire dès la proposition de ferme ; build + tests + BDD ajoutés au M0 (build.js présent) |
+| D-US789 | 11/11/2026 | Recette mobile A-104 : installation PWA OK, app fonctionnelle. Demandes client : revenus (US7), import relevé bancaire OFX (US8), bilan du mois (US9) — intégrées au palier courant |
 
 ## Actions ouvertes
 
@@ -15,7 +16,8 @@ Registre tenu par le **CPM**. Décisions et actions du projet.
 | --- | --- | --- | --- |
 | A-102 | Activer GitHub Pages (source « GitHub Actions ») au merge du M0 sur `main` — déploiement sans Node local (build sur le runner CI) | Mathieu | merge M0 |
 | A-103 | Rédiger le guide utilisateur v1.0 (installation PWA) à la livraison M0 | analyste métier | livraison M0 |
-| A-104 | Recette en conditions réelles navigateur une fois en ligne (R11 hors ligne, R12 persistance fermeture/réouverture, invite d'installation PWA desktop + mobile) | Mathieu | après mise en ligne |
+| A-104 | Recette en conditions réelles navigateur une fois en ligne (R11 hors ligne, R12 persistance fermeture/réouverture, invite d'installation PWA desktop + mobile) — **en cours** : installation OK, 3 demandes notées (D-US789) | Mathieu | mise en ligne faite |
+| A-105 | Livraison US7–US9 (branche `feat/US07-09-revenus-import-ofx-bilan`) + recette métier associée | analyste métier + dev | palier courant |
 
 ## Recettes
 

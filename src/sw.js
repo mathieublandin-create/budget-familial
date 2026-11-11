@@ -11,6 +11,7 @@ const PRECACHE = [
   "manifest.webmanifest",
   "domain/domaine.js",
   "domain/exportImport.js",
+  "domain/ofx.js",
   "icons/icon-192.png",
   "icons/icon-512.png",
 ];
