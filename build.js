@@ -10,7 +10,7 @@ const ROOT = dirname(fileURLToPath(import.meta.url));
 const SRC = join(ROOT, "src");
 const DIST = join(ROOT, "dist");
 const APP_VERSION = JSON.parse(readFileSync(join(ROOT, "package.json"), "utf8")).version;
-const SCHEMA_VERSION = 1;
+const SCHEMA_VERSION = 2;
 
 const CRC_TABLE = (() => {
   const t = new Uint32Array(256);
