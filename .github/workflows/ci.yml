@@ -20,3 +20,12 @@ jobs:
           test -s docs/ferme-agentique.md
           head -n 1 README.md | grep -q '^# '
           head -n 1 docs/ferme-agentique.md | grep -q '^# '
+  build-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Build zéro dépendance + tests unitaires + BDD
+        run: npm test
