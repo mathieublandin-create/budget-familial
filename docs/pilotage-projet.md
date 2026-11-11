@@ -13,9 +13,17 @@ Registre tenu par le **CPM**. Décisions et actions du projet.
 
 | ID | Action | Responsable | Échéance |
 | --- | --- | --- | --- |
-| A-101 | Recette métier M0 (US1–US6) après livraison : rejouer les 6 `.feature` + critères en conditions réelles | Mathieu | à la livraison M0 |
-| A-102 | Activer GitHub Pages (source « GitHub Actions ») à la mise en ligne du M0 sur `main` | Mathieu | merge M0 |
+| A-102 | Activer GitHub Pages (source « GitHub Actions ») au merge du M0 sur `main` — déploiement sans Node local (build sur le runner CI) | Mathieu | merge M0 |
 | A-103 | Rédiger le guide utilisateur v1.0 (installation PWA) à la livraison M0 | analyste métier | livraison M0 |
+| A-104 | Recette en conditions réelles navigateur une fois en ligne (R11 hors ligne, R12 persistance fermeture/réouverture, invite d'installation PWA desktop + mobile) | Mathieu | après mise en ligne |
+
+## Recettes
+
+| Palier | Verdict | Date | Détail |
+| --- | --- | --- | --- |
+| M0 (US1–US6) | **Validée avec réserves** | 11/11/2026 | Analyste métier spécialisé gestion budgétaire : 11/11 tests unitaires verts, 17/17 scénarios BDD verts (6 `.feature`), build rejouable bit à bit. **Réserves** : vérifications navigateur réel (hors ligne, persistance, installation PWA) impossibles sans mise en ligne → A-104. Aucun rejet, aucune anomalie bloquante ou majeure. |
+
+Actions soldées à connaître : A-101 (recette métier M0 — verdict ci-dessus).
 
 ## Liens
 
