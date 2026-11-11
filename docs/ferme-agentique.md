@@ -45,6 +45,7 @@ Un livrable = un seul propriétaire ; les autres rôles soumettent des propositi
 
 - **File unique orchestrée** : les agents produisent, ne s'interpellent pas directement.
 - **Enchaînement spontané des rôles** : l'orchestrateur fait succéder les rôles de lui-même dans une même session, sans attendre l'humain entre deux rôles (hors points de validation humaine, §7) — aucune question de l'utilisateur n'est nécessaire pour lancer un rôle ; une question de l'utilisateur est routée directement vers le rôle propriétaire du sujet.
+- **PR prête à merger après recette** (décision client 11/11/2026) : la livraison ouvre la PR en brouillon ; dès que la recette métier est **Validée** (ou « Validée avec réserves » non bloquantes) **et** la CI est verte, l'orchestrateur passe la PR en « ready for review » automatiquement. Le merge effectif reste une décision humaine (revue + clic « Merge »).
 - **Règle de l'écrit** : tout échange passe par un livrable ; une information manquante devient une **interprétation consignée (Ix)** et le travail continue — jamais de question agent → agent.
 - Les Ix ne sont arbitrées que par l'humain aux points de validation, ou en revue de fin de cycle.
 - **Plafonds** : 2 allers-retours de revue de code, 2 rejets de recette ; au-delà → revue à trois + arbitrage humain. Aucune boucle ne tourne en silence.
