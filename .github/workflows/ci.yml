@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Contrôle documentaire (zéro dépendance)
+        run: |
+          test -s README.md
+          test -s docs/ferme-agentique.md
+          head -n 1 README.md | grep -q '^# '
+          head -n 1 docs/ferme-agentique.md | grep -q '^# '
