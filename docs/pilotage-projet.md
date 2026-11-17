@@ -9,6 +9,7 @@ Registre tenu par le **CPM**. Décisions et actions du projet.
 | D-M0 | 11/11/2026 | Lancement du palier **M0 — Socle** (US1–US6) en PWA zéro dépendance, build Node rejouable, déploiement GitHub Pages automatique (hérité d'`objectifs-pwa`) |
 | D-CI | 11/11/2026 | CI minimale documentaire dès la proposition de ferme ; build + tests + BDD ajoutés au M0 (build.js présent) |
 | D-US789 | 11/11/2026 | Recette mobile A-104 : installation PWA OK, app fonctionnelle. Demandes client : revenus (US7), import relevé bancaire OFX (US8), bilan du mois (US9) — intégrées au palier courant |
+| D-M1 | 15/11/2026 | Lancement du palier **M1 — prédictif** : US10 solde projeté fin de mois (formule chiffrée, fonction pure testée à 100 %), affiché dans l'écran Bilan |
 
 ## Actions ouvertes
 

@@ -88,6 +88,22 @@ Critères d'acceptation :
 2. Le solde du mois est cohérent avec le suivi par poste (US4) : dépenses du bilan = total consommé du suivi.
 3. Un mois sans mouvement affiche des totaux à 0.
 
+## US10 — Solde projeté fin de mois (prédictif, palier M1)
+
+En tant qu'utilisateur, je visualise le **solde projeté en fin de mois** pour anticiper.
+
+Formule chiffrée (déterministe, testée à 100 %) :
+`soldeProjeté(mois) = soldeCourantTotal + resteRevenus − resteDépenses`, avec
+- `resteRevenus = max(0, revenusPrévusMensuels − encaissésDuMois)`
+- `resteDépenses = Σ_postes max(0, prévuMensualisé − consomméDuMois)`
+
+Hypothèse : tout le budget restant du mois sera encaissé/consommé. Un poste déjà dépassé contribue pour 0 (pas de reste négatif).
+
+Critères d'acceptation :
+1. Le bilan du mois affiche le solde projeté fin de mois selon la formule ci-dessus.
+2. Le calcul est une fonction pure du domaine, couverte à 100 % (unitaires + BDD).
+3. Cohérence : sans aucun mouvement, solde projeté = soldeCourantTotal + revenusPrévus − budgetMensuel.
+
 ## Hors périmètre M0
 
 Prédictif mi-mois (M1), réajustement mensuel (M2), projets et simulations (M3), persistance distante, multi-comptes avancés.

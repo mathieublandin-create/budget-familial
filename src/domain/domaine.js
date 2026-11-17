@@ -167,5 +167,34 @@ export function bilanMois(etat, moisIso) {
     depenses: totalDepense,
     soldeMois: arrondi2(totalEncaisse - totalDepense),
     soldeCourantTotal: arrondi2(etat.comptes.reduce((s, c) => s + (soldeCourant(etat, c.id) ?? 0), 0)),
+    soldeProjete: soldeProjete(etat, moisIso),
+  };
+}
+
+// US10 — solde projeté fin de mois. Hypothèse chiffrée : tout le reste du budget du mois
+// sera encaissé/consommé ; un poste dépassé contribue pour 0 (pas de reste négatif).
+export function soldeProjete(etat, moisIso) {
+  const b = bilanMoisSansProjection(etat, moisIso);
+  const resteRevenus = Math.max(0, b.prevuRevenus - b.encaisses);
+  const consomme = consommeParPoste(etat, moisIso);
+  const resteDepenses = etat.postes.reduce((s, p) => {
+    const prevu = mensualiser(p.montantPrevu, p.periodicite);
+    return s + Math.max(0, prevu - (consomme[p.id] ?? 0));
+  }, 0);
+  return arrondi2(b.soldeCourantTotal + resteRevenus - arrondi2(resteDepenses));
+}
+
+function bilanMoisSansProjection(etat, moisIso) {
+  const encaisses = encaisseParRevenu(etat, moisIso);
+  const totalEncaisse = arrondi2(Object.values(encaisses).reduce((s, v) => s + v, 0));
+  const totalDepense = sommeTransactions(etat, (t) => t.type === "depense" && moisDe(t.dateIso) === moisIso);
+  const prevuRevenus = arrondi2((etat.revenus ?? []).reduce((s, r) => s + mensualiser(r.montantPrevu, r.periodicite), 0));
+  return {
+    mois: moisIso,
+    prevuRevenus,
+    encaisses: totalEncaisse,
+    depenses: totalDepense,
+    soldeMois: arrondi2(totalEncaisse - totalDepense),
+    soldeCourantTotal: arrondi2(etat.comptes.reduce((s, c) => s + (soldeCourant(etat, c.id) ?? 0), 0)),
   };
 }
