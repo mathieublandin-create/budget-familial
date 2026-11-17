@@ -26,6 +26,7 @@ Registre tenu par le **CPM**. Décisions et actions du projet.
 | --- | --- | --- | --- |
 | M0 (US1–US6) | **Validée avec réserves** | 11/11/2026 | Analyste métier spécialisé gestion budgétaire : 11/11 tests unitaires verts, 17/17 scénarios BDD verts (6 `.feature`), build rejouable bit à bit. **Réserves** : vérifications navigateur réel (hors ligne, persistance, installation PWA) impossibles sans mise en ligne → A-104. Aucun rejet, aucune anomalie bloquante ou majeure. |
 | US7–US9 (revenus, import OFX, bilan) | **Validée avec réserves** | 11/11/2026 | Analyste métier : 16/16 tests unitaires verts, 25/25 scénarios BDD verts (9 `.feature`, dont us07/us08/us09), critères US7–US9 couverts (mensualisation revenus, parseur OFX DEBIT/CREDIT + virgule + dates, bilan du mois cohérent avec le suivi US4, migration schéma v1→v2). **Réserves** : import d'un vrai fichier OFX bancaire et navigation sur l'écran Bilan à confirmer en conditions réelles → A-104. Aucun rejet. |
+| US10 (solde projeté fin de mois, M1) | **Validée** | 15/11/2026 | Analyste métier : formule chiffrée conforme au cahier (soldeCourantTotal + resteRevenus − resteDépenses, poste dépassé = 0) ; 20/20 tests unitaires + 28/28 BDD verts (10 features), dont 4 tests + 3 scénarios dédiés US10. Affichage « Solde projeté fin de mois » dans l'écran Bilan. Aucun rejet, aucune réserve bloquante. |
 
 Actions soldées à connaître : A-101 (recette métier M0 — verdict ci-dessus).
 
