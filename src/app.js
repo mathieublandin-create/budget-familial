@@ -127,6 +127,7 @@ const ecrans = {
             <tr><th>Dépenses du mois</th><td class="montant">${fmt(b.depenses)}</td></tr>
             <tr><th>Solde du mois</th><td class="montant${b.soldeMois < 0 ? " negatif" : ""}">${fmt(b.soldeMois)}</td></tr>
             <tr><th>Solde courant total</th><td class="montant">${fmt(b.soldeCourantTotal)}</td></tr>
+            <tr><th>Solde projeté fin de mois</th><td class="montant${b.soldeProjete < 0 ? " negatif" : ""}">${fmt(b.soldeProjete)}</td></tr>
           </tbody>
         </table>
       </section>

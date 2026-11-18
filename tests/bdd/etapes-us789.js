@@ -24,6 +24,12 @@ function ofxSample(mouvements) {
 }
 
 export const etapes = [
+  { motif: /^un revenu « (.+) » (\w+) prévu (.+) et un poste « (.+) » (\w+) prévu (.+) et un poste « (.+) » (\w+) prévu (.+)$/, action: (m, ctx) => {
+    ctx.etat = ctx.etat ?? nouvelEtat();
+    creerRevenu(ctx, m[1], m[2], m[3]);
+    ctx.etat = ajouterPoste(ctx.etat, { id: `p-${m[4]}`, nom: m[4], periodicite: NORMALISER[m[5]] ?? m[5], montantPrevu: n(m[6]) }).etat;
+    ctx.etat = ajouterPoste(ctx.etat, { id: `p-${m[7]}`, nom: m[7], periodicite: NORMALISER[m[8]] ?? m[8], montantPrevu: n(m[9]) }).etat;
+  } },
   { motif: /^un revenu « (.+) » (\w+) prévu (.+) et un poste « (.+) » (\w+) prévu (.+)$/, action: (m, ctx) => {
     ctx.etat = ctx.etat ?? nouvelEtat();
     creerRevenu(ctx, m[1], m[2], m[3]);
